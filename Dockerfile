@@ -1,4 +1,4 @@
-FROM centos:6.5
+FROM centos
 MAINTAINER Kunihiro Tanaka <tanaka@sakura.ad.jp>
 
 RUN yum update -y
@@ -16,4 +16,5 @@ RUN mv /etc/ssh/sshd_config /etc/ssh/sshd_config.orig && sed 's/^UsePAM yes/UseP
 RUN chmod 755 /var/log/httpd
 RUN touch /etc/sysconfig/network
 RUN mkdir -m 700 /root/.ssh
-ADD authorized_keys /root/.ssh
+ADD authorized_keys /root/.ssh/authorized_keys
+ADD monit.conf /etc/monit.conf
