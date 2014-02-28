@@ -1,4 +1,4 @@
-FROM centos:lamp
+FROM centos
 MAINTAINER Kunihiro Tanaka <tanaka@sakura.ad.jp>
 
 RUN yum update -y
