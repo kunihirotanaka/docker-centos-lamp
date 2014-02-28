@@ -16,6 +16,7 @@ ADD monit.mysqld /etc/monit.d/mysqld
 ADD td-agent.conf /etc/td-agent/td-agent.conf
 ADD monit.conf /etc/monit.conf
 RUN chown -R root:root /etc/monit.d/ /etc/td-agent/td-agent.conf /etc/monit.conf
+RUN chmod -R 600 /etc/td-agent/td-agent.conf /etc/monit.conf
 
 RUN sed -ri 's/^UsePAM yes/#UsePAM yes/' /etc/ssh/sshd_config
 RUN sed -ri 's/^#UsePAM no/UsePAM no/' /etc/ssh/sshd_config
