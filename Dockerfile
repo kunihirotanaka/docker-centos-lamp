@@ -1,4 +1,4 @@
-FROM centos
+FROM centos:centos6
 MAINTAINER Kunihiro Tanaka <tanaka@sakura.ad.jp>
 
 ENV IP __YOUR_IP_ADDRESS_HERE__
@@ -6,6 +6,7 @@ ENV PW __YOUR_PASSWORD_HERE__
 ENV LOGSERVER __YOUR_LOG_SERVER_HERE__
 
 RUN yum update -y
+RUN yum install wget -y
 RUN wget http://rpms.famillecollet.com/enterprise/remi-release-6.rpm ;\
     wget http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm ;\
     wget http://pkgs.repoforge.org/rpmforge-release/rpmforge-release-0.5.3-1.el6.rf.x86_64.rpm ;\
